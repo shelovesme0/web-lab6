@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Варіант 11 – Конструктор Carousel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+  <header class="block block1">
+    <div>
+      <h2>Porsche 918 – Carousel Builder</h2>
+      <p>Варіант 11 – об’єкт «Carousel»</p>
+    </div>
+  </header>
+
+  <aside class="block block2">
+    <h3>Меню</h3>
+    <ul>
+      <li><a href="page1.html">1. Конструктор каруселі</a></li>
+      <li><a href="page2.html">2. Перегляд каруселі</a></li>
+    </ul>
+  </aside>
+
+  <!-- Центральний блок 3 – створення об’єкта Carousel -->
+  <section class="block block3">
+    <h3>Створення об’єкта «Carousel»</h3>
+
+    <div id="builder-form-wrapper" class="carousel-form">
+      <h3>Дані слайду</h3>
+
+      <div class="field-row">
+        <label>
+          Заголовок слайду
+          <input type="text" id="slide-title" placeholder="Напр.: Porsche 918 Spyder">
+        </label>
+
+        <label>
+          URL зображення
+          <input type="text" id="slide-image"
+                 placeholder="Напр.: porsche918.jpg або https://...">
+        </label>
+      </div>
+
+      <div class="field-row">
+        <label style="flex:1">
+          Опис слайду
+          <textarea id="slide-description"
+                    placeholder="Короткий опис автомобіля, характеристики тощо."></textarea>
+        </label>
+      </div>
+
+      <div class="field-row">
+        <label>
+          Автопрогравання (секунди)
+          <input type="number" id="slide-interval" value="4" min="1" max="60">
+        </label>
+
+        <label>
+          Початковий активний слайд
+          <input type="number" id="slide-start-index" value="1" min="1">
+        </label>
+      </div>
+
+      <div class="field-row">
+        <button type="button" id="btn-add-slide">Додати слайд</button>
+        <button type="button" id="btn-clear-slides">Очистити список</button>
+        <button type="button" id="btn-save-carousel">Зберегти карусель на сервері (AJAX)</button>
+      </div>
+
+      <p><strong>Порада:</strong> для локальних зображень набирай типу
+        <code>porsche918.jpg</code>, якщо файл лежить у тій самій папці.</p>
+    </div>
+
+    <div>
+      <h4>Поточний набір слайдів:</h4>
+      <ol id="slide-list" class="slide-list"></ol>
+    </div>
+
+    <div id="builder-preview-wrapper">
+      <h4>Прев’ю каруселі (клієнтська частина)</h4>
+      <div id="builder-preview"></div>
+    </div>
+
+    <p id="builder-status"></p>
+  </section>
+
+  <!-- Блок 4 – пояснення -->
+  <section class="block block4">
+    <h3>Key Characteristics</h3>
+    <ol>
+        <li>High-Performance Sports Cars: Porsche is synonymous with sports cars, producing vehicles renowned for their power, speed, and handling.</li>
+        <li>Luxury and Prestige: The brand represents modern luxury, prestige, and high-end automotive design.</li>
+        <li>Innovation and Engineering: Porsche is celebrated for its engineering prowess, including innovations in flat-four engines, all-wheel-drive systems, and suspension technology</li>
+        <li>Racing Legacy: The brand has a deep and successful history in motorsport, with iconic race cars and a significant influence on the automotive world</li>
+        <li>Iconic Models: The Porsche 911 is one of its most famous and enduring models, known for its unique silhouette and continuous evolution</li>
+    </ol>
+  </section>
+
+  <!-- Блок 5 – довільний контент -->
+  <main class="block block5">
+    <h3>Porsche 918 Spyder</h3>
+    <p>
+      Porsche 918 Spyder – гібридний суперкар із загальною потужністю до 875 к.с.,
+      що поєднує бензиновий V8 та два електродвигуни. Автомобіль демонструє
+      сучасні підходи до високих динамічних характеристик і ефективності.
+    </p>
+    <img src="porsche918.jpg" alt="Porsche 918">
+  </main>
+
+  <footer class="block block6">
+    <p>© 2025 Веб-сайт. Варіант 11 – Carousel.</p>
+    <h2>Driven by Passion, Defined by Porsche.</h2>
+  </footer>
+
+</div>
+
+<script src="builder.js"></script>
+</body>
+</html>

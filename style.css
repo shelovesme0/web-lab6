@@ -1,0 +1,308 @@
+/* ===== Макет сторінки з блоками 1–6 ===== */
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "block1 block1 block2"
+    "block3 block4 block2"
+    "block3 block5 block2"
+    "block6 block6 block6";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 5px;
+  min-height: 100vh;
+}
+
+.block {
+  border: 1px solid #000;
+  padding: 10px;
+  background-color: white;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.block1 {
+  grid-area: block1;
+  background-color: #cce0f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.block2 {
+  grid-area: block2;
+  background-color: #e6f0da;
+}
+
+.block3 {
+  grid-area: block3;
+  background-color: #fde6d5;
+}
+
+.block4 {
+  grid-area: block4;
+  background-color: #fde6d5;
+}
+
+.block5 {
+  grid-area: block5;
+  background-color: #fff;
+}
+
+.block6 {
+  grid-area: block6;
+  background-color: #cce0f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.block1 h2,
+.block6 h2 {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.block1 h2,
+.block1 p {
+  margin: 0;
+}
+
+.block1 p {
+  font-size: 1.2em;
+}
+
+.block2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.block2 li {
+  margin: 8px 0;
+}
+
+.block2 a {
+  text-decoration: none;
+  color: #004080;
+  font-weight: bold;
+}
+
+.block2 a:hover {
+  color: #ff6600;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 5px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "block1"
+      "block2"
+      "block3"
+      "block4"
+      "block5"
+      "block6";
+    min-height: auto;
+  }
+
+  .block1,
+  .block6 {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .block1 h2,
+  .block6 h2 {
+    display: block;
+  }
+}
+
+/* ===== Стилі для форми конструктора (1-ша сторінка) ===== */
+
+.carousel-form {
+  padding: 10px;
+  border: 1px dashed #444;
+  border-radius: 8px;
+  background: #fff7f0;
+  margin-bottom: 10px;
+}
+
+.carousel-form h3 {
+  margin-top: 0;
+}
+
+.carousel-form .field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.carousel-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.carousel-form input[type="text"],
+.carousel-form input[type="number"],
+.carousel-form textarea {
+  padding: 4px 6px;
+  min-width: 180px;
+}
+
+.carousel-form textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.carousel-form button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #ffe0c2;
+  cursor: pointer;
+}
+
+.carousel-form button:hover {
+  background: #ffd1a1;
+}
+
+.slide-list {
+  margin: 10px 0;
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+
+/* ===== Прев’ю на 1-й сторінці ===== */
+
+#builder-preview-wrapper {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+/* ===== Карусель (2-га сторінка + прев’ю) ===== */
+
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+
+.carousel-caption h4 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.carousel-caption p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Кнопки керування */
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.carousel-control:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+/* Індикатори */
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.carousel-indicators button.active {
+  background: #ffa500;
+}
+
+/* Повідомлення на 2-й сторінці */
+
+#viewer-status {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #555;
+}
